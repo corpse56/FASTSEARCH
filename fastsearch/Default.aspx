@@ -261,7 +261,7 @@
         <!--================================================================MARDGANI==============================================================================-->
     <br /><br /><br />
         <asp:Panel id = "mardgani_colapsediv" runat="server" style="height:60px; width:100%; padding:10px 0px 10px 0px;background-color:#98FB98;">
-            <asp:LinkButton ID="lbMARDGANI" runat="server" Font-Size="23px">Результаты поиска в базе Центра Американской Культуры. </asp:LinkButton> 
+            <asp:LinkButton ID="lbMARDGANI" runat="server" Font-Size="23px">Результаты поиска в базе Марджани. </asp:LinkButton> 
             &nbsp&nbsp&nbsp&nbsp&nbsp<asp:Image ID="Image4" runat="server" />
             <br />
             <asp:Label ID="Label4" runat="server" Text=""></asp:Label>
@@ -281,7 +281,7 @@
             TextLabelID="Label4"
             CollapsedText="Показать..."
             ExpandedText="Свернуть" 
-            ImageControlID="Image3"
+            ImageControlID="Image4"
             ExpandedImage="~/images/collapse_blue.jpg"
             CollapsedImage="~/images/expand_blue.jpg"> 
         </asp:CollapsiblePanelExtender>
@@ -333,7 +333,156 @@
             
         </asp:GridView>  
     </asp:Panel>    
-        <br />
+         <!--================================================================BJFCC==============================================================================-->
+    <br /><br /><br />
+        <asp:Panel id = "bjfcc_colapsediv" runat="server" style="height:60px; width:100%; padding:10px 0px 10px 0px;background-color:#98FB98;">
+            <asp:LinkButton ID="lbBJFCC" runat="server" Font-Size="23px">Результаты поиска в базе Французского Культурного Центра. </asp:LinkButton> 
+            &nbsp&nbsp&nbsp&nbsp&nbsp<asp:Image ID="Image5" runat="server" />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text=""></asp:Label>
+            
+        </asp:Panel>
+        
+        <asp:CollapsiblePanelExtender ID="CollapsiblePanelExtender5" runat="server" 
+            TargetControlID="pBJFCC"
+            CollapsedSize="0"
+            ExpandedSize="700"
+            Collapsed="True"
+            ExpandControlID="bjfcc_colapsediv"
+            CollapseControlID="bjfcc_colapsediv"
+            AutoCollapse="False"
+            AutoExpand="False"
+            ScrollContents="True"
+            TextLabelID="Label5"
+            CollapsedText="Показать..."
+            ExpandedText="Свернуть" 
+            ImageControlID="Image5"
+            ExpandedImage="~/images/collapse_blue.jpg"
+            CollapsedImage="~/images/expand_blue.jpg"> 
+        </asp:CollapsiblePanelExtender>
+        <asp:Panel ID="pBJFCC" runat="server"   Class = "HideHorizontalScrollBar" style = "overflow-x: hidden;">
+        
+         <asp:GridView ID="gvBJFCC" runat="server"  Width = "100%"
+        AutoGenerateColumns = "False"  BorderWidth="3px"
+         BorderStyle="Solid" BorderColor = "Black"
+            RowStyle-Wrap ="true"  Font-Size = "20px" CellPadding="3" 
+            AllowPaging = "true"  PageSize = "20" onpageindexchanging="gvBJFCC_PageIndexChanging"  
+              >
+            
+        <RowStyle Wrap="True"></RowStyle>
+            <Columns>
+                
+                <asp:BoundField HeaderText="Уровень">
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+
+                <asp:BoundField HeaderText="Автор" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+
+                <asp:TemplateField HeaderText="Заглавие" >
+                    
+                <HeaderStyle BackColor="Silver"  />
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lbDetails" runat="server" CommandName="details" 
+                            Text='<%#Eval("TIT")%>'  CommandArgument='<%#Eval("IDMAIN")%>' >
+                        </asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                
+                <asp:BoundField HeaderText="Место издания" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+                
+                <asp:BoundField HeaderText="Издательство" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+
+                <asp:BoundField HeaderText="Дата издания" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="E-lib" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+            </Columns>
+            
+        </asp:GridView>  
+    </asp:Panel>    
+            <!--================================================================BRIT_SOVET==============================================================================-->
+    <br /><br /><br />
+        <asp:Panel id = "britsovet_colapsediv" runat="server" style="height:60px; width:100%; padding:10px 0px 10px 0px;background-color:#98FB98;">
+            <asp:LinkButton ID="lbBRIT_SOVET" runat="server" Font-Size="23px">Результаты поиска в базе Британского Совета. </asp:LinkButton> 
+            &nbsp&nbsp&nbsp&nbsp&nbsp<asp:Image ID="Image6" runat="server" />
+            <br />
+            <asp:Label ID="Label6" runat="server" Text=""></asp:Label>
+            
+        </asp:Panel>
+        
+        <asp:CollapsiblePanelExtender ID="CollapsiblePanelExtender6" runat="server" 
+            TargetControlID="pBRIT_SOVET"
+            CollapsedSize="0"
+            ExpandedSize="700"
+            Collapsed="True"
+            ExpandControlID="britsovet_colapsediv"
+            CollapseControlID="britsovet_colapsediv"
+            AutoCollapse="False"
+            AutoExpand="False"
+            ScrollContents="True"
+            TextLabelID="Label6"
+            CollapsedText="Показать..."
+            ExpandedText="Свернуть" 
+            ImageControlID="Image6"
+            ExpandedImage="~/images/collapse_blue.jpg"
+            CollapsedImage="~/images/expand_blue.jpg"> 
+        </asp:CollapsiblePanelExtender>
+        <asp:Panel ID="pBRIT_SOVET" runat="server"   Class = "HideHorizontalScrollBar" style = "overflow-x: hidden;">
+        
+         <asp:GridView ID="gvBRIT_SOVET" runat="server"  Width = "100%"
+        AutoGenerateColumns = "False"  BorderWidth="3px"
+         BorderStyle="Solid" BorderColor = "Black"
+            RowStyle-Wrap ="true"  Font-Size = "20px" CellPadding="3" 
+            AllowPaging = "true"  PageSize = "20" onpageindexchanging="gvBRIT_SOVET_PageIndexChanging"  
+              >
+            
+        <RowStyle Wrap="True"></RowStyle>
+            <Columns>
+                
+                <asp:BoundField HeaderText="Уровень">
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+
+                <asp:BoundField HeaderText="Автор" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+
+                <asp:TemplateField HeaderText="Заглавие" >
+                    
+                <HeaderStyle BackColor="Silver"  />
+                    <ItemTemplate>
+                        <asp:LinkButton ID="lbDetails" runat="server" CommandName="details" 
+                            Text='<%#Eval("TIT")%>'  CommandArgument='<%#Eval("IDMAIN")%>' >
+                        </asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                
+                <asp:BoundField HeaderText="Место издания" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+                
+                <asp:BoundField HeaderText="Издательство" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+
+                <asp:BoundField HeaderText="Дата издания" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+                <asp:BoundField HeaderText="E-lib" >
+                <HeaderStyle BackColor="Silver" />
+                </asp:BoundField>
+            </Columns>
+            
+        </asp:GridView>  
+    </asp:Panel>           <br />
   </div>
         <!--<div style="width:300px;height:auto; float:right; display:inline;padding:20px 20px 20px 20px; border-style:solid; border-width:thin; background-color:InactiveBorder; margin:20px 20px 20px 20px;" >
     <div style="text-align:center;font-size:19px">
